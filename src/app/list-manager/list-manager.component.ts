@@ -4,6 +4,7 @@ import { InputButtonUnitComponent } from '../input-button-unit/input-button-unit
 import { TodoItem } from '../interfaces/todo-item';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import {AppComponent} from "../app.component";
+import {TodoListService} from "../services/todo-list.service";
 
 @Component({
   selector: 'app-list-manager',
@@ -13,14 +14,11 @@ import {AppComponent} from "../app.component";
   styleUrls: ['./list-manager.component.scss']
 })
 export class ListManagerComponent {
-  todoList: TodoItem[] = [
-    {title: 'install NodeJS'},
-    {title: 'install Angular CLI'},
-    {title: 'create new app'},
-    {title: 'serve app'},
-    {title: 'develop app'},
-    {title: 'deploy app'},
-  ];
+  todoList: TodoItem[];
+
+  constructor(private todoListService: TodoListService) {
+    this.todoList = this.todoListService.getTodoList();
+  }
 
   addItem(title: string): void {
     this.todoList.push({ title });
