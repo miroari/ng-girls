@@ -20,7 +20,7 @@ export class InputButtonUnitComponent {
     this.changeTitle('My first Angular App');
 
     setTimeout(() => {
-      this.title = 'This is not the title you are looking for';
+      this.title = '';
     }, 3000);
   }
 
@@ -39,4 +39,5 @@ export class InputButtonUnitComponent {
   submitValue(newTitle: string): void {
     this.submit.emit(newTitle);
   }
+
 }

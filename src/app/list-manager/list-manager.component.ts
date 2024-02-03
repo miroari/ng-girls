@@ -26,4 +26,8 @@ export class ListManagerComponent {
   removeItem(item: TodoItem): void {
     this.todoListService.deleteItem(item);
   }
+
+  updateItem(item: TodoItem, changes: any): void {
+    this.todoListService.updateItem(item, changes);
+  }
 }
