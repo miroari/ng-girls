@@ -1,12 +1,9 @@
-<p>
-  input-button-unit works!
-  The item title is: {{ title }}
-</p>
-
-<input #inputElementRef
+<input class="todo-input"
+       #inputElementRef
        [value]="title"
        (keyup.enter)="submitValue(getInputValue($event))">
 
-<button (click)="submitValue(inputElementRef.value)">
+<button class="btn"
+        (click)="submitValue(inputElementRef.value)">
   Save
 </button>
