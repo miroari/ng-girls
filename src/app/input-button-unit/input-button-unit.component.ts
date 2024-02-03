@@ -10,5 +10,10 @@ import {AppComponent} from "../app.component";
   styleUrl: './input-button-unit.component.scss'
 })
 export class InputButtonUnitComponent {
-  title = 'Learn about components';
+  title = 'Hello World';
+
+  constructor() {
+    this.title = 'I Love Angular';
+  }
+
 }

@@ -13,6 +13,9 @@ import {InputButtonUnitComponent} from "./input-button-unit/input-button-unit.co
   </h1>
 
   <app-input-button-unit></app-input-button-unit>
+  <app-input-button-unit></app-input-button-unit>
+  <app-input-button-unit></app-input-button-unit>
+  <app-input-button-unit></app-input-button-unit>
 `,
   styleUrl: './app.component.scss'
 })
