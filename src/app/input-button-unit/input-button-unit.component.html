@@ -3,7 +3,8 @@
   The item title is: {{ title }}
 </p>
 
-<input [value]="title"
+<input #inputElementRef
+  [value]="title"
        (keyup.enter)="changeTitle(getInputValue($event))">
 <button (click)="changeTitle('Button Clicked!')">
   Save

@@ -13,12 +13,22 @@ import {InputButtonUnitComponent} from "./input-button-unit/input-button-unit.co
   </h1>
 
   <app-input-button-unit></app-input-button-unit>
-  <app-input-button-unit></app-input-button-unit>
-  <app-input-button-unit></app-input-button-unit>
-  <app-input-button-unit></app-input-button-unit>
+  <ul>
+    <li *ngFor="let todoItem of todoList">
+      {{ todoItem.title }}
+    </li>
+  </ul>
 `,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'todo-list';
+  todoList = [
+    {title: 'install NodeJS'},
+    {title: 'install Angular CLI'},
+    {title: 'create new app'},
+    {title: 'serve app'},
+    {title: 'develop app'},
+    {title: 'deploy app'},
+  ];
 }
