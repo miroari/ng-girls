@@ -4,8 +4,9 @@
 </p>
 
 <input #inputElementRef
-  [value]="title"
-       (keyup.enter)="changeTitle(getInputValue($event))">
-<button (click)="changeTitle('Button Clicked!')">
+       [value]="title"
+       (keyup.enter)="submitValue(getInputValue($event))">
+
+<button (click)="submitValue(inputElementRef.value)">
   Save
 </button>
