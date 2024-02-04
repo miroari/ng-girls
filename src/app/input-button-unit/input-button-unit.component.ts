@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {AppComponent} from "../app.component";
 
@@ -14,14 +14,11 @@ export class InputButtonUnitComponent {
   test = 'tes123';
 
   @Output() submit:EventEmitter<string> = new EventEmitter<string>();
+  @ViewChild('inputElementRef') inputElement!: ElementRef;
 
   constructor() {
     this.title = 'I Love Angular';
-    this.changeTitle('My first Angular App');
-
-    setTimeout(() => {
-      this.title = '';
-    }, 3000);
+    // this.changeTitle('My first Angular App');
   }
 
   changeTitle(newTitle: string): void {
@@ -38,6 +35,10 @@ export class InputButtonUnitComponent {
 
   submitValue(newTitle: string): void {
     this.submit.emit(newTitle);
+    this.clearInput();
   }
 
+  clearInput(): void {
+    this.inputElement.nativeElement.value = '';
+  }
 }

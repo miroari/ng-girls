@@ -19,7 +19,7 @@ export class TodoItemComponent {
   }
 
   editValue(): void {
-    console.log(123);
+    this.update.emit({});
   }
 
   completeItem(): void {
