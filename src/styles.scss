@@ -35,6 +35,11 @@ ol, ul {
   background: lightslategrey;
 }
 
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: grey;
+}
+
 .btn-red {
   background: red;
 }
