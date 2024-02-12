@@ -3,21 +3,27 @@ import { Component } from '@angular/core';
 import { InputButtonUnitComponent } from '../input-button-unit/input-button-unit.component';
 import { TodoItem } from '../interfaces/todo-item';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
-import {AppComponent} from "../app.component";
-import {TodoListService} from "../services/todo-list.service";
+import { AppComponent } from '../app.component';
+import { TodoListService } from '../services/todo-list.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-manager',
   standalone: true,
-  imports: [CommonModule, InputButtonUnitComponent, TodoItemComponent, AppComponent],
+  imports: [
+    CommonModule,
+    InputButtonUnitComponent,
+    TodoItemComponent,
+    AppComponent,
+  ],
   templateUrl: './list-manager.component.html',
-  styleUrls: ['./list-manager.component.scss']
+  styleUrls: ['./list-manager.component.scss'],
 })
 export class ListManagerComponent {
-  todoList: TodoItem[];
+  todoList$: Observable<TodoItem[]>;
 
   constructor(private todoListService: TodoListService) {
-    this.todoList = this.todoListService.getTodoList();
+    this.todoList$ = this.todoListService.getTodoList$();
   }
 
   addItem(title: string): void {
